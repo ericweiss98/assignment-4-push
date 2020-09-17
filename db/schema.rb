@@ -10,16 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200911184752) do
+ActiveRecord::Schema.define(version: 20200910151129) do
 
-  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
-    t.string "Title", default: "Default", null: false
-    t.string "Genre", default: "Default", null: false
-    t.string "Author", default: "Default", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string "Title"
+    t.string "Genre"
+    t.string "Author"
     t.date "PublishedDate"
     t.integer "Price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
