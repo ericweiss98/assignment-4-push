@@ -1,6 +1,6 @@
 class AddColumns < ActiveRecord::Migration[5.1]
   def change
-	add_column("Books", "published-date", :string)
-	add_column("Books", "price", :int)
+	add_column(:books, "published-date", :string)
+	add_column(:books, "price", :int)
   end
 end
